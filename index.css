@@ -1,0 +1,616 @@
+.main_body {
+  /* background: rgb(23, 9, 249);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 9, 249, 1) 0%,
+    rgba(44, 44, 232, 1) 17%,
+    rgba(11, 189, 230, 1) 56%,
+    rgba(234, 247, 250, 1) 80%
+  ); */
+  /* width: 100vw;
+  height: 100vh; */
+  padding-left: 4vw;
+  display: flex;
+}
+
+.right_part {
+  margin-left: 10vw;
+  width: 60vw;
+  position: relative;
+}
+
+.logo {
+  /* height: 20vh;
+	width: 30vw; */
+  position: relative;
+  margin-top: 5vh;
+}
+
+.logo img {
+  margin-top: 5vh;
+  height: 10vw;
+  width: 30vw;
+}
+
+.services {
+  color: white;
+  margin-top: 1vw;
+  font-size: 3vw;
+  /* margin-left: 5vw; */
+}
+
+.service_info {
+  color: white;
+  width: 30vw;
+  margin-top: 5vh;
+  font-size: 1.5vw;
+}
+
+/* cuboidal email collector*/
+.fun-cube i {
+  transform: scale(10);
+  opacity: 0.1;
+}
+
+#cuboid {
+  width: 30vw;
+  font-size: 1.5vw;
+
+  margin-top: 4vh;
+  /*this also makes #cuboid a container for absolutely positioned descendants*/
+  perspective: 1000px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  /* position: absolute; */
+  /* width: 100vw; */
+  /* background: rgb(23, 9, 249); */
+  background: linear-gradient(
+    90deg,
+    rgba(23, 9, 249, 1) 0%,
+    rgba(44, 44, 232, 1) 17%,
+    rgba(11, 189, 230, 1) 56%,
+    rgba(234, 247, 250, 1) 80%
+  );
+  /* height: 100vh; */
+}
+#cuboid form {
+  /*counter translate*/
+  transform: translateZ(-20px);
+  /*propogate 3d space for children*/
+  transform-style: preserve-3d;
+  /*prevent height collapse as children are absolutely positioned*/
+  height: 5vh;
+  /*for smooth animations*/
+  transition: all 0.35s;
+}
+
+/*faces*/
+.cuboid-text {
+  /*each face will be 40px high*/
+  line-height: 5vh;
+  height: 5vh;
+  text-align: center;
+  background: hsl(189, 88%, 27%);
+}
+.loader {
+  background: hsl(189, 88%, 27%);
+  animation: phase 1s infinite;
+}
+/*Lets create a pulsating animation for the loader face*/
+@keyframes phase {
+  50% {
+    background: hsl(189, 88%, 27%);
+  }
+}
+#email {
+  background: white;
+  outline: none;
+  border: 0 none;
+  font: inherit;
+  text-align: left;
+  color: rgb(7, 63, 184);
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+#submit {
+  display: none;
+}
+
+.header-mob {
+  display: none;
+}
+
+#submit-icon,
+#reset-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1.5vh;
+  color: rgba(0, 0, 0, 0.25);
+  line-height: 5vh;
+  padding: 0 10px;
+  /*smooth transitions when user activates input and types something*/
+  transition: all 0.5s;
+  /*to make the icons feel like buttons*/
+  cursor: pointer;
+}
+/*.active = when the user is typing something*/
+#submit-icon.active {
+  color: hsl(120, 40%, 30%);
+}
+#reset-icon {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+}
+
+#cuboid div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+/*3D transforms. Each face will be rotated in multiples of -90deg and moved 20px(half of their 40px height) out*/
+#cuboid div:nth-child(1) {
+  transform: rotateX(0deg) translateZ(20px);
+}
+#cuboid div:nth-child(2) {
+  transform: rotateX(-90deg) translateZ(20px);
+}
+#cuboid div:nth-child(3) {
+  transform: rotateX(-180deg) translateZ(20px);
+}
+#cuboid div:nth-child(4) {
+  transform: rotateX(-270deg) translateZ(20px);
+}
+.mob_show {
+  display: none;
+}
+
+/*the form will have 4 states/classes(default+3) for rotation*/
+#cuboid form:hover,
+#cuboid form.ready {
+  transform: translateZ(-20px) rotateX(90deg);
+}
+#cuboid form.loading {
+  transform: translateZ(-20px) rotateX(180deg);
+}
+#cuboid form.complete {
+  transform: translateZ(-20px) rotateX(270deg);
+}
+
+.terms {
+  color: white;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+}
+
+.barcode {
+  width: 20vw;
+  margin-top: 5vh;
+}
+
+/*right part*/
+/* vc{
+  width: 54%;
+  height: 100vh;
+  position: relative;
+  background-color: #fff;
+} */
+
+.vc_dottedline {
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
+.vc_regularbank_man_td,
+.vc_onebanc_man_td {
+  width: 46%;
+}
+.vc_regularbank_man_td {
+  text-align: center;
+}
+.vc_onebank_man,
+.vc_regularbank_man {
+  position: relative;
+}
+.feature_container,
+.vc_onebank_man_mob_container .feature_container {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  color: #000;
+}
+.hideFeatures .feature_container,
+.vc_onebank_man_mob_container.hideFeatures .feature_container {
+  display: none;
+}
+.feature_container .icon {
+  font-size: 5em;
+  color: #666;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.feature_table {
+  position: relative;
+  margin: 0 auto;
+  right: 0;
+  top: 21%;
+  width: 75%;
+}
+/* .feature_container {
+  display: none;
+} */
+.feature_container .title {
+  font-size: 0.9em;
+  line-height: 0.5em;
+  color: #444;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.pic_man {
+  width: 13vw;
+  height: 60vh;
+}
+.pic_man2 {
+  width: 15vw;
+  height: 60vh;
+}
+.vc_regularbank_man,
+.vc_onebank_man {
+  display: inline-block;
+}
+.vc_regularbank_man .feature_container.analytics {
+  left: -1%;
+  top: -21%;
+}
+.vc_regularbank_man .feature_container.forex {
+  left: -36%;
+  top: -8%;
+}
+.vc_regularbank_man .feature_container.investments {
+  left: -48%;
+  top: 9%;
+}
+.vc_regularbank_man .feature_container.savings {
+  bottom: 62%;
+  left: -43%;
+}
+.vc_regularbank_man .feature_container.rewards {
+  top: 45%;
+  left: -18%;
+}
+.vc_regularbank_man .feature_container.cards {
+  top: -21%;
+  right: 33%;
+}
+.vc_regularbank_man .feature_container.payments {
+  top: -10%;
+  right: -8%;
+}
+.vc_regularbank_man .feature_container.payments .icon {
+  padding-bottom: 6px;
+}
+.vc_regularbank_man .feature_container.loan {
+  top: 8%;
+    right: -12%;
+}
+.vc_regularbank_man .feature_container.support {
+  bottom: 72%;
+  right: -26%;
+}
+.vc_onebank_man .feature_container .icon {
+  font-size: 4em;
+}
+.vc_onebank_man .feature_container.analytics {
+  top: -22%;
+  right: -30%;
+}
+.vc_onebank_man .feature_container.forex {
+  top: -26%;
+  right: 2%;
+}
+.vc_onebank_man .feature_container.investments {
+  top: -23%;
+  right: 39%;
+}
+.vc_onebank_man .feature_container.savings {
+  top: -12%;
+  right: 2%;
+}
+.vc_onebank_man .feature_container.rewards {
+  top: -13%;
+  right: 25%;
+}
+.vc_onebank_man .feature_container.cards {
+  top: 9%;
+  right: 6%;
+}
+.vc_onebank_man .feature_container.payments {
+  top: 1%;
+  right: -5%;
+}
+.vc_onebank_man .feature_container.payments .icon {
+  padding-bottom: 4px;
+}
+.vc_onebank_man .feature_container.loan {
+  top: 1%;
+  right: 23%;
+}
+.vc_onebank_man .feature_container.support {
+  top: -11%;
+  right: -18%;
+}
+.vc_onebank_man .vc_funnel {
+  position: absolute;
+}
+.vc_onebank_man .vc_funnel.right {
+  top: -6%;
+  right: -31%;
+}
+.vc_onebank_man .vc_funnel.right.small {
+  top: -20%;
+  right: -8%;
+  width: 8%;
+}
+.vc_onebank_man .vc_funnel.left {
+  top: -6%;
+  right: 19%;
+  transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+.vc_onebank_man .vc_funnel.left.small {
+  top: -17%;
+  right: 18%;
+  width: 10%;
+}
+.bank_title {
+  font-size: 1.5vw;
+  margin-top: 2vh;
+  color: black;
+  position: relative;
+  text-align: center;
+}
+
+.vc_onebank_man .bank_title {
+  left: -16%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .main_body {
+    display: block;
+  }
+  .left_part {
+    width: 60vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .logo img {
+    width: 50vw;
+    /* margin-bottom: 3vh;   */
+  }
+  .services {
+    font-size: 4vw;
+  }
+  .service_info {
+    font-size: 20px;
+    width: 50vw;
+    margin-top: 5vh !important;
+  }
+  .right_part {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5vh;
+  }
+  body {
+    background: linear-gradient(
+      180deg,
+      rgba(23, 9, 249, 1) 0%,
+      rgba(44, 44, 232, 1) 17%,
+      rgba(11, 189, 230, 1) 56%,
+      rgba(234, 247, 250, 1) 80%
+    );
+  }
+  .pic_man {
+    width: 20vw;
+    height: 40vw;
+  }
+  .pic_man2 {
+    width: 25vw;
+    height: 40vw;
+  }
+  #cuboid {
+    margin: auto;
+    margin-top: 5vh;
+    font-size: 2vh;
+  }
+  .service_info {
+    margin: auto;
+  }
+  .header {
+    display: none;
+  }
+  .header-mob {
+    text-align: center;
+    display: block;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: black;
+    margin: 0;
+  }
+  .terms-mob {
+    margin-top: 5vh;
+    color: white;
+  }
+}
+
+.highlight{
+
+  text-shadow: 5px 5px 10px rgb(8, 162, 209);
+}
+@media only screen and (max-width: 800px) {
+  .main_body {
+    display: block;
+  }
+  .left_part {
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .logo img {
+    width: 50vw;
+    /* margin-bottom: 3vh;   */
+  }
+  .services {
+    font-size: 4vw;
+  }
+  .service_info {
+    font-size: 20px;
+    width: 50vw;
+    margin-top: 5vh !important;
+  }
+  .feature_table {
+    display: none;
+  }
+  body {
+    background: linear-gradient(
+      180deg,
+      rgba(23, 9, 249, 1) 0%,
+      rgba(44, 44, 232, 1) 17%,
+      rgba(11, 189, 230, 1) 56%,
+      rgba(234, 247, 250, 1) 80%
+    );
+  }
+  .pic_man {
+    width: 20vw;
+    height: 40vw;
+  }
+  .pic_man2 {
+    width: 25vw;
+    height: 40vw;
+  }
+  #cuboid {
+    width: 60vw;
+    margin: auto;
+    margin-top: 5vh;
+    font-size: 2vh;
+  }
+  .service_info {
+    margin: auto;
+  }
+  .header {
+    display: none;
+  }
+  .header-mob {
+    text-align: center;
+    display: block;
+
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: black;
+    margin-top: 10vh;
+  }
+  .terms-mob {
+    margin-top: 5vh;
+    color: white;
+  }
+  .right_part {
+    margin-top: 20vh;
+  }
+  .mob_show {
+    margin-top: 10vh !important;
+    display: contents;
+    position: absolute;
+  }
+  .mob_man_section {
+    width: 45%;
+    padding: 3% 8% 0 0;
+    float: right;
+    text-align: center;
+  }
+  .mob_man_section .vc_onebank_man_mob_container {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    width: 92%;
+    max-width: 320px;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .vc_onebank_man_mob {
+    width: 100%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .icon {
+    font-size: 3.5em;
+    color: black !important;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .title {
+    font-size: 0.8em;
+    line-height: 0.5em;
+    color: black !important;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.loan {
+    left: -10%;
+    top: -1%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.rewards {
+    left: 40%;
+    top: -29%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.support {
+    left: 11%;
+    top: -23%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.payments {
+    bottom: 55%;
+    left: -20%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.cards {
+    bottom: 19%;
+    left: -22%;
+  }
+  .mob_man_section
+    .vc_onebank_man_mob_container
+    .feature_container.investments {
+    top: -3%;
+    right: -10%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.savings {
+    top: -24%;
+    right: 17%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.analytics {
+    bottom: 20%;
+    right: -19%;
+  }
+  .mob_man_section .vc_onebank_man_mob_container .feature_container.forex {
+    bottom: 55%;
+    right: -16%;
+  }
+  .vc_onebank_man_mob_container .feature_container.selected .icon {
+    text-shadow: 1px 1px 3px #c2cfd7;
+    font-size: 3.8em;
+  }
+  .feature_container.selected .title {
+    font-size: 1em;
+  }
+
+  .highlight{
+
+    text-shadow: 5px 5px 10px rgb(3, 46, 59);
+  }
+}
